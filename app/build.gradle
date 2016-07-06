@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        applicationId "test.unit.cointribe.com.myapplication"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        development {
+            applicationId "com.cointribe.development"
+            versionName "1.0.0.0"
+        }
+        gold {
+            applicationId "com.cointribe.gold"
+            versionName "1.0.0.1"
+        }
+        free {
+            applicationId "com.cointribe.free"
+            versionName "1.0.0.2"
+        }
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/sample1/java', 'src/sample2/java', 'src/sample3/java/', 'src/free/java/', 'src/golduser/java/']
+        }
+        free { java.srcDirs = ['src/free/java', 'src/free/java/', 'src/free1/java/'] }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:design:24.0.0'
+    compile 'com.google.code.gson:gson:2.4'
+
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+
+}
