@@ -14,6 +14,7 @@ public class LoginPresenter {
     }
 
     public void setResponse(boolean response) {
+
         this.response = response;
     }
 
@@ -36,12 +37,28 @@ public class LoginPresenter {
             view.showPasswordError(R.string.password_error);
             return;
         }
-        boolean loginSucceeded = service.login(username, password);
-        if (loginSucceeded) {
+        service.loginIn(username, password);
+
+        if (isResponse()) {
             view.showLogInSuc(R.string.login_suc);
             view.startMainActivity();
             return;
         }
+        else{
+            view.showLoginError(R.string.login_wait);
+        }
+
+
+//        boolean bool=service.login(username, password);
+//        if(bool){
+//            view.showLogInSuc(R.string.login_suc);
+//            view.startMainActivity();
+//            return;
+//        }
+//        else{
+//            view.showLoginError(R.string.login_wait);
+//        }
+
         view.showLoginError(R.string.login_failed);
     }
 }

@@ -13,4 +13,5 @@
     <string name="title_activity_jsonsample">JSONSAMPLE</string>
     <string name="title_activity_development_user_instruction_page">DevelopmentUserInstructionPage
     </string>
+    <string name="login_wait">Wait Please</string>
 </resources>

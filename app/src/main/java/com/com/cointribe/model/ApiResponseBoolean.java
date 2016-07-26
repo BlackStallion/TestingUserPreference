@@ -10,10 +10,11 @@ public class ApiResponseBoolean {
     }
 
     public void setResponse(boolean response) {
+
         this.response = response;
     }
 
-    boolean response;
+    boolean response=false;
     boolean responseLocal;
 
 

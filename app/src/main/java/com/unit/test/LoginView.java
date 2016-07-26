@@ -17,5 +17,7 @@ public interface LoginView {
     void showLoginError(int resId);
 
     void showLogInSuc(int resId);
+
+
 }
 

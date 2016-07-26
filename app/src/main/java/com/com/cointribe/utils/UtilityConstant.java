@@ -1,5 +1,8 @@
 package com.com.cointribe.utils;
 
+import android.app.Activity;
+import android.content.Intent;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
@@ -28,5 +31,12 @@ public class UtilityConstant {
         noOfActivity.put("LogIn", "HomePageGold"); //key,value
         noOfActivity.put("HomePageGold", "ProductPage");
         return noOfActivity;
+    }
+
+    public static void StartActivity(Activity activity, String ActivityName) throws ClassNotFoundException {
+
+        Intent intent = new Intent(activity, Class.forName(ActivityName));
+        activity.startActivity(intent);
+//        activity.finish();
     }
 }
